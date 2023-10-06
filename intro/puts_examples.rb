@@ -1,17 +1,14 @@
-#---
-# Excerpted from "Programming Ruby 3.2",
-# published by The Pragmatic Bookshelf.
-# Copyrights apply to this code. It may not be used to create training material,
-# courses, books, articles, and the like. Contact us if you are in doubt.
-# We make no guarantees that this code is fit for any purpose.
-# Visit https://pragprog.com/titles/ruby5 for more book information.
-#---
+# frozen_string_literal: true
+
 song = 1
-sam = ""
-def sam.play(_a)
-  "duh dum, da dum de dum ..."
+sam = ''
+
+def sam.play(_song)
+  'duh dum, da dum de dum ...'
 end
-"gin joint".length
-"Rick".index("c")
+
+'gin joint'.length
+'Rick'.index('c')
 42.even?
 sam.play(song)
+song.abs

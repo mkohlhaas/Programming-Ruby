@@ -1,11 +1,6 @@
-#---
-# Excerpted from "Programming Ruby 3.2",
-# published by The Pragmatic Bookshelf.
-# Copyrights apply to this code. It may not be used to create training material,
-# courses, books, articles, and the like. Contact us if you are in doubt.
-# We make no guarantees that this code is fit for any purpose.
-# Visit https://pragprog.com/titles/ruby5 for more book information.
-#---
+# frozen_string_literal: true
+
+# SalesDataFeed class
 class SalesDataFeed
   def initialize
     @items = []
@@ -21,20 +16,21 @@ class SalesDataFeed
 
   def print_plain_text_data
     @items.each do |item|
-      printf("%-10s %10.2f\n", item.isbn, item.amount)
+      printf("%-10<isbn> %10.2<amount>\n", isbn: item.isbn, amount: item.amount)
     end
     printf("           ----------\n")
     printf("%21.2f\n", total_sales)
   end
 end
 
+# CsvDataFeed class
 class CsvDataFeed < SalesDataFeed
-  require "csv"
+  require 'csv'
 
   def initialize(csv_file_name)
     super()
     CSV.foreach(csv_file_name, headers: true) do |row|
-      add_sales_item(row["isbn"], row["Amount"])
+      add_sales_item(row['isbn'], row['Amount'])
     end
   end
 end
@@ -42,7 +38,7 @@ end
 class XmlDataFeed < SalesDataFeed
 end
 
-feed = CsvDataFeed.new("data.csv")
+feed = CsvDataFeed.new('data.csv')
 
 puts feed.total_sales
 
