@@ -3,8 +3,8 @@
 require 'csv'
 require_relative 'book_in_stock'
 
-# CSVReader class
-class CSVReader
+# CsvReader class
+class CsvReader
   def initialize
     @books_in_stock = []
   end
@@ -17,8 +17,7 @@ class CSVReader
 
   def total_value_in_stock
     sum = 0.0
-    @books_in_stock.sum(&:price_in_cents)
-    # @books_in_stock.each { |book| sum += book.price_in_cents }
+    @books_in_stock.each { |book| sum += book.price_in_cents }
     sum / 100.0
   end
 

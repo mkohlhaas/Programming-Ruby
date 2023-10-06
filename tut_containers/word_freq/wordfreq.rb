@@ -1,5 +1,7 @@
-require_relative "words_from_string"
-require_relative "count_frequency"
+# frozen_string_literal: true
+
+require_relative 'words_from_string'
+require_relative 'count_frequency'
 
 raw_text = $stdin.read
 word_list = words_from_string(raw_text)

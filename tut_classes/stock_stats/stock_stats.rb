@@ -2,7 +2,7 @@
 
 require_relative 'csv_reader'
 
-reader = CSVReader.new
+reader = CsvReader.new
 
 ARGV.each do |csv_file_name|
   warn "Processing #{csv_file_name}"

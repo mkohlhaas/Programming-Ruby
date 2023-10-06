@@ -1,5 +1,7 @@
-require_relative "words_from_string"
-require_relative "count_frequency"
+# frozen_string_literal: true
+
+require_relative 'words_from_string'
+require_relative 'count_frequency'
 
 raw_text = "The problem breaks down into two parts. First, given some text
 as a string, return a list of words. That sounds like an array. Then, build
@@ -8,7 +10,7 @@ index it with the word and use the corresponding entry to keep a count."
 
 word_list = words_from_string(raw_text)
 counts = count_frequency(word_list)
-sorted = counts.sort_by { |word, count| count }
+sorted = counts.sort_by { |_word, count| count }
 top_five = sorted.last(5)
 
 top_five.reverse_each do |word, count|
